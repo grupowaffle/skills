@@ -9,10 +9,19 @@ Skills do Claude que qualquer pessoa do time pode instalar e usar. Uma skill é 
 | `escrita/` | [`thenews-voz`](escrita/thenews-voz) | Tom de voz e regras de texto: minúscula, "o the news", travessão, emoji, patrocínio sinalizado. | Todo mundo que escreve em nome do the news: conteúdo, social, comercial, marketing, pessoas, atendimento. |
 | `marca/` | [`thenews-brand`](marca/thenews-brand) | Identidade visual: cores, tipografia, logos, submarcas e componentes. Inclui os logos oficiais e um verificador automático. | Quem monta apresentação, documento, e-mail, página ou tela. |
 | `qualidade/` | [`antislop`](qualidade/antislop) | Filtro contra "cara de IA": corta vocabulário vazio, número sem fonte, slide genérico e enfeite sem função. Funciona junto com as duas acima. | Todo mundo, em qualquer entrega feita com o Claude. |
+| `editorial/` | [`revisao-de-edicao`](editorial/revisao-de-edicao) | Última revisão de uma edição antes do envio: marcação esquecida, links, patrocínio sinalizado, assunto e prévia, coerência de fatos e tamanho do e-mail. | Conteúdo, editorial e quem agenda envio. |
 
 ## Como instalar
 
-### No Claude (app ou claude.ai)
+### O jeito mais fácil: peça ao Claude
+
+Cole isto em uma conversa com o Claude:
+
+> leia https://raw.githubusercontent.com/grupowaffle/skills/main/CONFIGURAR.md e configure as skills do the news para mim
+
+Ele pergunta o que você faz, escolhe as skills úteis para você e instala (ou te passa os links certos, se estiver no app). As instruções que ele segue estão em [`CONFIGURAR.md`](CONFIGURAR.md).
+
+### À mão, no Claude (app ou claude.ai)
 
 Não precisa de conta no GitHub nem de instalar nada.
 
@@ -20,16 +29,18 @@ Não precisa de conta no GitHub nem de instalar nada.
    - [thenews-voz.zip](https://github.com/grupowaffle/skills/releases/latest/download/thenews-voz.zip)
    - [thenews-brand.zip](https://github.com/grupowaffle/skills/releases/latest/download/thenews-brand.zip)
    - [antislop.zip](https://github.com/grupowaffle/skills/releases/latest/download/antislop.zip)
+   - [revisao-de-edicao.zip](https://github.com/grupowaffle/skills/releases/latest/download/revisao-de-edicao.zip)
 2. No Claude, abra **Configurações > Capacidades > Skills**, clique em **Enviar skill** e escolha o `.zip` (sem descompactar).
 3. Pronto. Não precisa chamar a skill pelo nome: ela entra sozinha quando o pedido tem a ver.
 
-### No Claude Code
+### À mão, no Claude Code
 
 ```bash
 git clone https://github.com/grupowaffle/skills.git
 cp -R skills/escrita/thenews-voz ~/.claude/skills/
 cp -R skills/marca/thenews-brand ~/.claude/skills/
 cp -R skills/qualidade/antislop ~/.claude/skills/
+cp -R skills/editorial/revisao-de-edicao ~/.claude/skills/
 ```
 
 Para atualizar, rode `git pull` na pasta clonada e copie de novo.
@@ -42,13 +53,14 @@ Peça normalmente. Exemplos:
 - "revisa esse e-mail para o parceiro no tom do the news"
 - "monta uma apresentação de resultados do trimestre com a cara do the news"
 - "cria a página de inscrição do evento"
+- "revisa essa edição antes de eu agendar"
 
 ## Como contribuir com uma skill
 
-1. Crie a pasta da skill dentro da categoria certa (`escrita/`, `marca/`, `qualidade/` ou uma categoria nova, em minúscula e sem acento).
+1. Crie a pasta da skill dentro da categoria certa (`escrita/`, `marca/`, `qualidade/`, `editorial/` ou uma categoria nova, em minúscula e sem acento).
 2. A pasta precisa de um `SKILL.md` com `name` e `description` no topo. A `description` diz **quando** o Claude deve usar a skill; capriche nela.
 3. Arquivos de apoio vão em `references/` (textos), `assets/` (imagens, modelos) e `scripts/`.
-4. Acrescente a skill na tabela deste README.
+4. Acrescente a skill na tabela deste README e na tabela do `CONFIGURAR.md`.
 5. Abra um pull request. Quem aprovar gera os `.zip` novos em **Releases**.
 
 ### Regra de dados: nada pessoal, nada secreto
