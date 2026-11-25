@@ -1,0 +1,57 @@
+# skills do the news
+
+Skills do Claude que qualquer pessoa do time pode instalar e usar. Uma skill é uma pasta com instruções que o Claude carrega sozinho quando o assunto aparece: você pede "monta um slide sobre X" e ele já sabe as cores, o logo e o jeito de escrever do the news.
+
+## O que tem aqui
+
+| Pasta | Skill | Para que serve | Quem usa |
+|---|---|---|---|
+| `escrita/` | [`thenews-voz`](escrita/thenews-voz) | Tom de voz e regras de texto: minúscula, "o the news", travessão, emoji, patrocínio sinalizado. | Todo mundo que escreve em nome do the news: conteúdo, social, comercial, marketing, pessoas, atendimento. |
+| `marca/` | [`thenews-brand`](marca/thenews-brand) | Identidade visual: cores, tipografia, logos, submarcas e componentes. Inclui os logos oficiais e um verificador automático. | Quem monta apresentação, documento, e-mail, página ou tela. |
+
+## Como instalar
+
+### No Claude (app ou claude.ai)
+
+1. Nesta página, clique em **Code > Download ZIP** e descompacte.
+2. Entre na pasta da categoria (por exemplo `escrita/`) e compacte a pasta da skill (`thenews-voz`) em um `.zip`.
+3. No Claude, abra **Configurações > Capacidades > Skills**, clique em **Enviar skill** e escolha o `.zip`.
+4. Pronto. Não precisa chamar a skill pelo nome: ela entra sozinha quando o pedido tem a ver.
+
+### No Claude Code
+
+```bash
+git clone https://github.com/grupowaffle/skills.git
+cp -R skills/escrita/thenews-voz ~/.claude/skills/
+cp -R skills/marca/thenews-brand ~/.claude/skills/
+```
+
+Para atualizar, rode `git pull` na pasta clonada e copie de novo.
+
+## Como usar
+
+Peça normalmente. Exemplos:
+
+- "escreve um post de LinkedIn anunciando a nova newsletter"
+- "revisa esse e-mail para o parceiro no tom do the news"
+- "monta uma apresentação de resultados do trimestre com a cara do the news"
+- "cria a página de inscrição do evento"
+
+## Como contribuir com uma skill
+
+1. Crie a pasta da skill dentro da categoria certa (`escrita/`, `marca/` ou uma categoria nova, em minúscula e sem acento).
+2. A pasta precisa de um `SKILL.md` com `name` e `description` no topo. A `description` diz **quando** o Claude deve usar a skill; capriche nela.
+3. Arquivos de apoio vão em `references/` (textos), `assets/` (imagens, modelos) e `scripts/`.
+4. Acrescente a skill na tabela deste README.
+5. Abra um pull request.
+
+### Regra de dados: nada pessoal, nada secreto
+
+Este repositório é lido por toda a empresa. Antes de enviar, confira que a skill **não** tem:
+
+- e-mails, telefones, nomes de pessoas (colegas, leitores, clientes, parceiros);
+- senhas, tokens, chaves de API, IDs de conta ou de usuário;
+- números de contrato, valores, dados de assinantes ou de desempenho;
+- caminhos da sua máquina (`/Users/seu-nome/...`) e histórias do tipo "em tal dia fulano pediu".
+
+Escreva para **qualquer** pessoa do time: troque "o Fulano prefere" por "o padrão do time é". Se a skill só funciona para uma pessoa ou um projeto, ela fica na máquina dessa pessoa, não aqui.

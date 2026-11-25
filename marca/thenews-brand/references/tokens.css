@@ -1,0 +1,125 @@
+/* the news — tokens de marca para UI
+   Fonte: brandbook the news 2026 + design system "the news" (tokens.json).
+   Use SÓ estas variáveis. Hex solto fora deste arquivo é violação. */
+
+@import url("https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;700;800;900&display=swap");
+
+/* Se o projeto tiver a licença da Helvetica Now Display, declare aqui:
+@font-face { font-family: "Helvetica Now Display"; src: url("/fonts/HelveticaNowDisplay-Light.woff2") format("woff2"); font-weight: 300; font-display: swap; }
+@font-face { font-family: "Helvetica Now Display"; src: url("/fonts/HelveticaNowDisplay-Regular.woff2") format("woff2"); font-weight: 400; font-display: swap; }
+@font-face { font-family: "Helvetica Now Display"; src: url("/fonts/HelveticaNowDisplay-Bold.woff2") format("woff2"); font-weight: 700; font-display: swap; }
+@font-face { font-family: "Helvetica Now Display"; src: url("/fonts/HelveticaNowDisplay-Black.woff2") format("woff2"); font-weight: 900; font-display: swap; }
+*/
+
+:root {
+  /* ---------- cores-base da marca ---------- */
+  --tn-amarelo: #ffcd00;   /* cor-mãe. fundo de destaque; texto só sobre preto */
+  --tn-laranja: #ff8e42;   /* SÓ dentro do degradê */
+  --tn-preto:   #000000;
+  --tn-branco:  #ffffff;
+
+  --tn-degrade: linear-gradient(90deg, var(--tn-laranja) 0%, var(--tn-amarelo) 100%);
+  --tn-degrade-vertical: linear-gradient(180deg, var(--tn-amarelo) 0%, var(--tn-laranja) 100%); /* fundos tipo capa/encerramento */
+
+  /* ---------- semânticos (tema claro) ---------- */
+  --surface:      #ffffff;
+  --surface-alt:  #f2f2f2;
+  --ink:          #000000;
+  --ink-muted:    #555555;  /* 7.4:1 no branco. legendas, fontes, metadados */
+  --line:         #000000;  /* divisórias: o brandbook usa linha preta fina */
+  --line-soft:    #e0e0e0;  /* bordas de input/tabela quando preto pesa demais */
+  --highlight:    var(--tn-amarelo); /* fundo de marca-texto, pílula, badge */
+  --on-highlight: #000000;
+  --focus:        #000000;
+
+  /* feedback: decisão de UI (o brandbook não define). Reusa cores da paleta.
+     Use como ícone, borda ou fundo; o TEXTO continua --ink. */
+  --feedback-erro:    #f70301;
+  --feedback-sucesso: #00bf63;
+  --feedback-aviso:   var(--tn-amarelo);
+
+  /* ---------- tipografia ---------- */
+  --font-display: "Helvetica Now Display", "Inter Tight", Helvetica, Arial, sans-serif;
+  --tracking-titulo: -0.02em;  /* "-20" do brandbook */
+  --tracking-corpo: 0;
+
+  --w-light: 300;  --w-regular: 400;  --w-bold: 700;  --w-extra: 800;  --w-black: 900;
+
+  /* escala web (derivada da escala de slides 1920 do design system) */
+  --fs-display: clamp(2.75rem, 6vw, 5.5rem);   /* hero / manifesto     ~88px */
+  --fs-h1:      clamp(2.25rem, 4.5vw, 3.5rem); /* título de página     ~56px */
+  --fs-h2:      clamp(1.75rem, 3vw, 2.5rem);   /* seção                ~40px */
+  --fs-h3:      1.5rem;                        /* card / bloco          24px */
+  --fs-numero:  clamp(2.5rem, 5vw, 4rem);      /* números de destaque       */
+  --fs-lead:    1.375rem;                      /* subtítulo light       22px */
+  --fs-body:    1.125rem;                      /* corpo light           18px */
+  --fs-small:   0.9375rem;                     /* UI densa, regular     15px */
+  --fs-eyebrow: 0.8125rem;                     /* caixa alta, 800       13px */
+
+  --lh-titulo: 1;  --lh-corpo: 1.45;
+
+  /* ---------- espaço ---------- */
+  --space-0: 4px;
+  --space-05: 8px;
+  --space-1: 16px;   /* rótulo → título */
+  --space-2: 32px;   /* entre cards de uma linha */
+  --space-3: 56px;   /* entre blocos */
+  --space-4: 108px;  /* margem lateral larga (desktop) */
+
+  --tarja: 6px;          /* tarja degradê em UI */
+  --tarja-hero: 20px;    /* tarja em hero / tela cheia / slide */
+
+  /* ---------- raio ---------- */
+  --radius-0: 0;         /* cards, imagens, containers */
+  --radius-pill: 16px;   /* pílulas, botões, inputs */
+  --radius-full: 50%;    /* caneca, avatar, ícone circular */
+
+  --container: 1200px;
+}
+
+/* ---------- tema escuro ---------- */
+:root[data-theme="dark"] {
+  --surface: #000000;
+  --surface-alt: #1a1a1a;
+  --ink: #ffffff;
+  --ink-muted: #bdbdbd;
+  --line: #ffffff;
+  --line-soft: #333333;
+  --focus: var(--tn-amarelo);
+  /* no escuro amarelo PODE ser texto (14:1) */
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --surface: #000000;
+    --surface-alt: #1a1a1a;
+    --ink: #ffffff;
+    --ink-muted: #bdbdbd;
+    --line: #ffffff;
+    --line-soft: #333333;
+    --focus: var(--tn-amarelo);
+  }
+}
+
+/* ---------- submarcas: aplique data-brand="<submarca>" no container ---------- */
+[data-brand="morning"]      { --sub-1: #ff8e42; --sub-2: #ffcd00; }
+[data-brand="night"]        { --sub-1: #000000; --sub-2: #374b84; }
+[data-brand="money"]        { --sub-1: #2aa0a7; --sub-2: #00bf63; }
+[data-brand="trends"]       { --sub-1: #f70301; --sub-2: #f97f2e; }
+[data-brand="business"]     { --sub-1: #3632ca; --sub-2: #f742a1; }
+[data-brand="sports"]       { --sub-1: #760102; --sub-2: #f70301; }
+[data-brand="health"]       { --sub-1: #6a98ff; --sub-2: #94eeff; }
+[data-brand="around"]       { --sub-1: #4f5025; --sub-2: #d9c8ba; }
+[data-brand="travel"]       { --sub-1: #000000; --sub-2: #9a9a9a; }
+[data-brand="cult"]         { --sub-1: #dc4659; --sub-2: #f4b0b2; }
+[data-brand="elections"]    { --sub-1: #1906ae; --sub-2: #6c9bf7; }
+/* better work: brandbook só mostra o logo (azul em degradê), sem hex oficial. Pergunte ao time de marca antes de usar. */
+[data-brand] { --sub-degrade: linear-gradient(90deg, var(--sub-1), var(--sub-2)); }
+
+/* ---------- base ---------- */
+html { font-family: var(--font-display); color: var(--ink); background: var(--surface); }
+body { font-weight: var(--w-light); font-size: var(--fs-body); line-height: var(--lh-corpo); letter-spacing: var(--tracking-corpo); margin: 0; }
+h1, h2, h3, h4 { font-weight: var(--w-black); letter-spacing: var(--tracking-titulo); line-height: var(--lh-titulo); margin: 0; }
+h3, h4 { font-weight: var(--w-bold); }
+small, .tn-small { font-size: var(--fs-small); font-weight: var(--w-regular); }
+:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+::selection { background: var(--tn-amarelo); color: var(--tn-preto); }
