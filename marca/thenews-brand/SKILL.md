@@ -35,11 +35,26 @@ Princípios de design da marca, que decidem qualquer dúvida não coberta aqui:
 - Proibido: serifadas, monoespaçada fora de código, segunda família "para variar", itálico decorativo.
 
 ### Logo
-- Use **sempre os PNGs originais** de `assets/logos/`. Nunca recrie o logo em CSS/SVG/texto, nunca recolora, distorça ou anime a forma.
+- Use **sempre os arquivos originais** de `assets/logos/`. Nunca recrie o logo em CSS/SVG/texto, nunca recolora, distorça ou anime a forma.
 - `the-news-preto.png` em fundo claro; `the-news-branco.png` em fundo preto. Em fundo degradê amarelo → laranja, o logo pode ser branco ou preto.
 - Assinatura institucional (header, footer, login, email) = logo completo (caneca + "the news"). Texto "the news" digitado não substitui assinatura.
-- A **caneca** (disco) pode aparecer isolada em ícone, favicon, app icon, avatar. **Sempre em degradê amarelo**, nunca outra cor.
+- A **caneca** (disco) pode aparecer isolada em ícone, favicon, app icon, avatar. **Sempre em degradê amarelo**, nunca outra cor. Arquivo: `assets/logos/icons/logo.jpg` (ou `logo.svg`).
 - Liquid glass é permitido desde que não prejudique leitura.
+
+Arquivos disponíveis (todos PNG com fundo transparente, salvo indicação):
+
+| o quê | arquivo em `assets/logos/` | fundo |
+|---|---|---|
+| the news completo (caneca + nome) | `the-news-preto.png` · `the-news-branco.png` | claro · preto |
+| tns (grupo), horizontal | `horizontal/tns_black.png` · `horizontal/tns_white.png` (ou `tns-preto.png` · `tns-branco.png`, menores) | claro · preto |
+| tns, selo redondo | `icons/tns_black.png` (disco preto) · `icons/tns_white.png` (disco branco sobre quadrado degradê) · `icons/tns_yellow.png` (disco degradê) | avatar, perfil de rede social |
+| "t" com traço degradê | `icons/tns_black_t.png` · `icons/tns_white_t.png` | claro · preto; favicon, ícone compacto |
+| caneca | `icons/logo.jpg` · `icons/logo.svg` | quadrado degradê próprio |
+| submarca, horizontal | `horizontal/MORNING.png`, `NIGHT`, `MONEY`, `TRENDS`, `BUSINESS`, `SPORTS`, `HEALTH`, `AROUND`, `TRAVEL`, `CULT`, `BETTERWORK` | **só fundo claro** (o "the news" é preto) |
+| submarca, ícone | `icons/morning.png`, `night`, `money`, `trends`, `business`, `sports`, `health`, `around`, `cult` | quadrado branco próprio |
+| rising | `icons/rising.png` | baixa resolução (87px): só miniatura |
+
+Os mesmos arquivos estão publicados em `https://assets.thenews.com.br/institutional/logos/horizontal/<ARQUIVO>` e `.../logos/icons/<arquivo>`. Em e-mail ou HTML que precisa de imagem hospedada, aponte para essa URL em vez de anexar.
 
 ### Forma e espaço
 - Raios: **0** em cards, imagens e containers; **16px** em pílulas, botões e inputs; **50%** só em discos (caneca, avatar, ícone circular).

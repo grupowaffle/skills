@@ -5,7 +5,10 @@ Arquitetura: **tns** (grupo) → newsletter **the news** + submarcas · podcasts
 ## estrutura fixa (não variar)
 Logo de submarca = traço degradê da submarca + "the news" em preto (ou branco) + nome da submarca em CAIXA ALTA 900 com degradê das cores da submarca, alinhado à direita embaixo. A **tarja degradê é obrigatória**; a marca-mãe não precisa aparecer sempre. Não crie variações estruturais.
 
-Os arquivos de logo das submarcas não estão neste pacote. Peça os originais ao time de marca; **não recrie** em CSS/SVG.
+Os logos oficiais estão em `assets/logos/horizontal/<NOME>.png` (assinatura) e `assets/logos/icons/<nome>.png` (ícone quadrado com o "t" e o traço da submarca). **Não recrie** em CSS/SVG.
+
+- Os horizontais têm "the news" em preto: servem só para fundo claro. Não há versão para fundo escuro no pacote; se precisar, peça ao time de marca em vez de inverter as cores.
+- Sem ícone no pacote: travel e better work. Sem horizontal: rising (só `icons/rising.png`, em baixa resolução).
 
 ## paleta (degradê vai da cor 1 para a cor 2)
 | submarca | cor 1 | cor 2 | observação |
@@ -21,7 +24,7 @@ Os arquivos de logo das submarcas não estão neste pacote. Peça os originais a
 | travel | #000000 | #9a9a9a | |
 | cult | #dc4659 | #f4b0b2 | |
 | elections | #1906ae | #6c9bf7 | |
-| better work | — | — | só logo no brandbook (azul em degradê); sem hex oficial, confirmar com marca |
+| better work | — | — | logo em `assets/logos/horizontal/BETTERWORK.png` (azul em degradê); sem hex oficial, confirmar com marca |
 
 ## como aplicar em UI
 - Envolva a área em `data-brand="money"` (etc.) e use `--sub-1`, `--sub-2`, `--sub-degrade`.
