@@ -1,0 +1,16 @@
+name: skills
+id: ari:cloud:compass:9233e69e-7513-4ba6-85e4-6ed93407817d:component/03297ee7-c2c5-4075-8a21-7bab22f1c6a2/8235545b-7f7f-4d60-86ce-266b0d30c04b
+description: Skills do Claude reutilizáveis pelo time do the news
+configVersion: 1
+typeId: SERVICE
+fields:
+  tier: 4
+links:
+  - name: null
+    type: REPOSITORY
+    url: https://github.com/grupowaffle/skills
+relationships:
+  DEPENDS_ON: []
+labels:
+  - source:github
+customFields: null
