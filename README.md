@@ -13,10 +13,13 @@ Skills do Claude que qualquer pessoa do time pode instalar e usar. Uma skill é 
 
 ### No Claude (app ou claude.ai)
 
-1. Nesta página, clique em **Code > Download ZIP** e descompacte.
-2. Entre na pasta da categoria (por exemplo `escrita/`) e compacte a pasta da skill (`thenews-voz`) em um `.zip`.
-3. No Claude, abra **Configurações > Capacidades > Skills**, clique em **Enviar skill** e escolha o `.zip`.
-4. Pronto. Não precisa chamar a skill pelo nome: ela entra sozinha quando o pedido tem a ver.
+Não precisa de conta no GitHub nem de instalar nada.
+
+1. Baixe o `.zip` da skill:
+   - [thenews-voz.zip](https://github.com/grupowaffle/skills/releases/latest/download/thenews-voz.zip)
+   - [thenews-brand.zip](https://github.com/grupowaffle/skills/releases/latest/download/thenews-brand.zip)
+2. No Claude, abra **Configurações > Capacidades > Skills**, clique em **Enviar skill** e escolha o `.zip` (sem descompactar).
+3. Pronto. Não precisa chamar a skill pelo nome: ela entra sozinha quando o pedido tem a ver.
 
 ### No Claude Code
 
@@ -43,15 +46,16 @@ Peça normalmente. Exemplos:
 2. A pasta precisa de um `SKILL.md` com `name` e `description` no topo. A `description` diz **quando** o Claude deve usar a skill; capriche nela.
 3. Arquivos de apoio vão em `references/` (textos), `assets/` (imagens, modelos) e `scripts/`.
 4. Acrescente a skill na tabela deste README.
-5. Abra um pull request.
+5. Abra um pull request. Quem aprovar gera os `.zip` novos em **Releases**.
 
 ### Regra de dados: nada pessoal, nada secreto
 
-Este repositório é lido por toda a empresa. Antes de enviar, confira que a skill **não** tem:
+Este repositório é **público**: qualquer pessoa na internet lê o que está aqui, inclusive o histórico e os metadados das imagens. Antes de enviar, confira que a skill **não** tem:
 
 - e-mails, telefones, nomes de pessoas (colegas, leitores, clientes, parceiros);
 - senhas, tokens, chaves de API, IDs de conta ou de usuário;
 - números de contrato, valores, dados de assinantes ou de desempenho;
+- metadados em imagens e PDFs (arquivo exportado do Canva ou do Photoshop leva o nome de quem criou);
 - caminhos da sua máquina (`/Users/seu-nome/...`) e histórias do tipo "em tal dia fulano pediu".
 
 Escreva para **qualquer** pessoa do time: troque "o Fulano prefere" por "o padrão do time é". Se a skill só funciona para uma pessoa ou um projeto, ela fica na máquina dessa pessoa, não aqui.
